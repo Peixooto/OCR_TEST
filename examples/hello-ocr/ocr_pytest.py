@@ -1,4 +1,5 @@
 import json
+import pytest
 from filter_optical_character_recognition.filter import FilterOpticalCharacterRecognition
 
 OCR_RESULTS_PATH = "output/ocr_results.json"
@@ -34,11 +35,11 @@ def test_all_frames_have_ocr_texts():
     frames = load_ocr_results()
     assert len(frames) > 0, "No frames processed."
 
-    # frames_without_text = [idx for idx, frame in enumerate(frames) if not frame.get("texts")]
-    # allowed_empty_frames = 2  # por exemplo
+    frames_without_text = [idx for idx, frame in enumerate(frames) if not frame.get("texts")]
+    allowed_empty_frames = 2
 
-    # assert len(frames_without_text) <= allowed_empty_frames, (
-    #     f"Too many frames without OCR texts: {frames_without_text}")
+    assert len(frames_without_text) <= allowed_empty_frames, (
+        f"Too many frames without OCR texts: {frames_without_text}")
 
     # this script below identified frame failure when executing .mov, in some moments we have no failure
 
@@ -46,3 +47,18 @@ def test_all_frames_have_ocr_texts():
         texts = frame.get("texts", [])
         assert isinstance(texts, list), f"{idx} frame contains no text list."
         assert len(texts) > 0, f"{idx} frame no OCR texts detected."
+
+def test_ocr_invalid_input():
+    config ={
+        "ocr_engine": "easyocr",
+        "forward_ocr_texts": True,
+    }
+    filter_instance = FilterOpticalCharacterRecognition(config=config)
+
+    bad_frame ={
+        "topic":"main",
+        "frame_id":99,
+        "image":None
+    }
+    with pytest.raises(Exception):
+        filter_instance.process(bad_frame)
