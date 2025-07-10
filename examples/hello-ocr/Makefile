@@ -1,7 +1,7 @@
 # ---------------------------------
 # Repo-specific variables
 # ---------------------------------
-
+VENV_DIR := venv
 VERSION ?= $(shell cat VERSION)
 export VERSION
 
