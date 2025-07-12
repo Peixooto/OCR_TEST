@@ -1,0 +1,11 @@
+services:
+  ocr-app:
+    image: openfilter-ocr
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"       # expõe a porta do Webvis
+    volumes:
+      - ./output:/app/output      # para persistir os resultados fora do container
+      - ./hello.mov:/app/hello.mov  # monta o vídeo para o container acessar
