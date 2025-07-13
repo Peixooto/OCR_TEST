@@ -66,5 +66,16 @@ pip install -e .[dev]
  You must have docker in your OS (docker desktop for windows)
 
  - souce/hello-ocr
+
+ ```bash
  - docker compose build
+ ```
+
+ ```bash
  - docker compose up
+ ```
+
+    or just
+```bash 
+ - docker compose up --build
+```
