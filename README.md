@@ -11,9 +11,9 @@ pip install -e .[dev]
 ```
 
 ## Running CLI
-    Use for Windows OS: 
+Use for Windows OS: 
+source /app/hello-ocr
 
-    source /app/hello-ocr
 ```bash
     openfilter run `
   - VideoIn `
@@ -26,15 +26,15 @@ pip install -e .[dev]
     --sources 'tcp://localhost:5552'
 ```
 
-    For unit tests:
+For unit tests:
   ```bash
     pytest ocr_pytest.py
   ```
 
 ------------------------------
-    Use for Linux:
+Use for Linux:
 
-     source /app/hello-ocr
+source /app/hello-ocr
 
 ```bash
      openfilter run \
@@ -48,7 +48,7 @@ pip install -e .[dev]
     --sources 'tcp://localhost:5552'
 ```
 
-    For unit tests:
+For unit tests:
   ```bash
     pytest ocr_pytest.py
   ```
@@ -68,7 +68,7 @@ pip install -e .[dev]
 
  You must have docker in your OS (docker desktop for windows)
 
- - souce/hello-ocr
+-souce/hello-ocr
 
  ```bash
   docker compose build
@@ -78,7 +78,7 @@ pip install -e .[dev]
   docker compose up
  ```
 
-    or just
+or just
 ```bash 
   docker compose up --build
 ```
