@@ -14,7 +14,7 @@ pip install -e .[dev]
     Use for Windows OS: 
 
     source /app/hello-ocr
-    
+```bash
     openfilter run `
   - VideoIn `
     --sources 'file://hello.mov' `
@@ -24,16 +24,17 @@ pip install -e .[dev]
     --outputs 'tcp://*:5552' `
   - Webvis `
     --sources 'tcp://localhost:5552'
-
+```
 
     For unit tests:
-    pytest ocr_pytest.py
+    - pytest ocr_pytest.py
 
 ------------------------------
     Use for Linux:
 
      source /app/hello-ocr
 
+```bash
      openfilter run \
   - VideoIn \
     --sources 'file://hello.mov' \
@@ -43,9 +44,10 @@ pip install -e .[dev]
     --outputs 'tcp://*:5552' \
   - Webvis \
     --sources 'tcp://localhost:5552'
+```
 
     For unit tests:
-    pytest ocr_pytest.py
+    - pytest ocr_pytest.py
 
 
 ## Running with .bat for Windows OS
