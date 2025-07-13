@@ -27,7 +27,9 @@ pip install -e .[dev]
 ```
 
     For unit tests:
-    - pytest ocr_pytest.py
+  ```bash
+    pytest ocr_pytest.py
+  ```
 
 ------------------------------
     Use for Linux:
@@ -47,8 +49,9 @@ pip install -e .[dev]
 ```
 
     For unit tests:
-    - pytest ocr_pytest.py
-
+  ```bash
+    pytest ocr_pytest.py
+  ```
 
 ## Running with .bat for Windows OS
  source/hello-ocr
