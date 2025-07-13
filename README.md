@@ -68,14 +68,14 @@ pip install -e .[dev]
  - souce/hello-ocr
 
  ```bash
- - docker compose build
+  docker compose build
  ```
 
  ```bash
- - docker compose up
+  docker compose up
  ```
 
     or just
 ```bash 
- - docker compose up --build
+  docker compose up --build
 ```
