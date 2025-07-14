@@ -1,5 +1,6 @@
 services:
    ocr-app:
+    user: root
     image: openfilter-ocr
     build:
       context: .
