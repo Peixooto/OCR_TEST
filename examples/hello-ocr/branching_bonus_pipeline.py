@@ -8,7 +8,7 @@ if __name__ == '__main__':
     Filter.run_multi([
         (VideoIn, dict(
             sources='file://hello.mov!loop',
-            outputs=['tcp://*:5554', 'tcp://*:5556'],  # envia para 2 filtros
+            outputs=['tcp://*:5554', 'tcp://*:5556'],
         )),
         (FilterOpticalCharacterRecognition, dict(
             sources='tcp://localhost:5554',
@@ -21,6 +21,6 @@ if __name__ == '__main__':
             outputs='tcp://*:5558',
         )),
         (Webvis, dict(
-            sources=['tcp://localhost:5552', 'tcp://localhost:5558'],  # exibe ambos
+            sources=['tcp://localhost:5552', 'tcp://localhost:5558'],
         )),
     ])

@@ -41,7 +41,6 @@ def test_all_frames_have_ocr_texts():
     assert len(frames_without_text) <= allowed_empty_frames, (
         f"Too many frames without OCR texts: {frames_without_text}")
 
-    # this script below identified frame failure when executing .mov, in some moments we have no failure
 
     for idx, frame in enumerate(frames):
         texts = frame.get("texts", [])
